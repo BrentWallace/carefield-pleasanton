@@ -26,4 +26,10 @@ router.get('/memory-care', (req, res) => {
   });
 });
 
+router.get('/activities', (req, res) => {
+  res.render('activities.hbs', {
+    title: 'Events & Activities',
+  });
+});
+
 module.exports = router;
