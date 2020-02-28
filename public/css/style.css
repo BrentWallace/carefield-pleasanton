@@ -1,0 +1,11 @@
+.bg-carefield {
+  background-color: #7bb1b2;
+}
+
+.carousel .carousel-item {
+  height:600px;
+}
+
+p.extra-height {
+  line-height:2
+}
