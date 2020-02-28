@@ -14,8 +14,8 @@ router.get('/photos', (req, res) => {
   });
 });
 
-router.get('/floorplans', (req, res) => {
-  res.render('floorplans.hbs', {
+router.get('/floor-plans', (req, res) => {
+  res.render('floor-plans.hbs', {
     title: 'Floorplans',
   });
 });
