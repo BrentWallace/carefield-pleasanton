@@ -14,4 +14,16 @@ router.get('/photos', (req, res) => {
   });
 });
 
+router.get('/floorplans', (req, res) => {
+  res.render('floorplans.hbs', {
+    title: 'Floorplans',
+  });
+});
+
+router.get('/memory-care', (req, res) => {
+  res.render('memory-care.hbs', {
+    title: 'Memory Care',
+  });
+});
+
 module.exports = router;
