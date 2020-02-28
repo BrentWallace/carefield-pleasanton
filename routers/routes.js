@@ -8,6 +8,12 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/about', (req, res) => {
+  res.render('about.hbs', {
+    title: 'About Carefield Pleasanton',
+  });
+});
+
 router.get('/photos', (req, res) => {
   res.render('photos.hbs', {
     title: 'Photo Gallery',
