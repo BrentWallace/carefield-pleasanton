@@ -32,4 +32,10 @@ router.get('/activities', (req, res) => {
   });
 });
 
+router.get('/contact', (req, res) => {
+  res.render('contact.hbs', {
+    title: 'Contact Us',
+  });
+});
+
 module.exports = router;
