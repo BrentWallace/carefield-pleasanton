@@ -47,9 +47,10 @@ router.get('/contact', (req, res) => {
 
 router.post('/contact', (req, res) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  const toEmail = process.env.EMAIL_RECIPIENT;
   const { fromEmail, firstName, lastName, phone, referralSource, inquiringFor, brochure, tour, comments } = req.body;
   const msg = {
-    to: 'bwallace@carefieldliving.com',
+    to: toEmail,
     from: fromEmail,
     subject: `Carefield Pleasanton Contact Form: ${firstName} ${lastName} - ${fromEmail}`,
     text: `${firstName} ${lastName} has submitted an inquiry through the contact form on carefieldpleasanton.com. They can be contacted by phone at ${phone} and by email at ${fromEmail}.\r\nInquiring for:${inquiringFor}\r\nReferred by: ${referralSource}\r\nBrochure:${brochure}\r\nTour:${tour}\r\n\r\nMessage start: ${comments}`,
