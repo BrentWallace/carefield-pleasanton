@@ -59,7 +59,7 @@ router.post('/contact', [
 ], (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(422).send('Sorry, something appears to have gone wrong!');
+    return res.status(400).send();
   }
   const toEmail = process.env.EMAIL_RECIPIENT;
   const { fromEmail, firstName, lastName, phone, referralSource, inquiringFor, brochure, tour, comments } = req.body;

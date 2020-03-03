@@ -167,12 +167,20 @@
             tour: tour,
           },
           timeout: 5000,
+          statusCode: {
+            400: function () {
+              $('#form-response').removeClass('alert-success').addClass('alert alert-danger');
+            },
+            200: function () {
+              $('#form-response').removeClass('alert-danger').addClass('alert alert-success');
+            }
+          }
         });
         request.done(function (msg) {
-          $('#form-response').removeClass('alert-danger').addClass('alert alert-success').html(msg);
+          $('#form-response').html(msg);
         });
         request.fail(function (msg) {
-          $('#form-response').removeClass('alert-success').addClass('alert alert-danger').html('Something seems to have gone wrong with your request. Please contact us by phone.');
+          $('#form-response').html('Something seems to have gone wrong with your request. Please contact us by phone');
         })
       });
     </script>

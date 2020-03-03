@@ -1,10 +1,12 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
+const helmet = require('helmet');
 const router = require('../routers/routes');
 require('dotenv').config();
 
 const app = express();
+app.use(helmet());
 
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
