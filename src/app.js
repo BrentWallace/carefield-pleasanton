@@ -11,6 +11,8 @@ const partialsPath = path.join(__dirname, '../templates/partials');
 const publicDirectoryPath = path.join(__dirname, '../public');
 
 app.use(express.static(publicDirectoryPath));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(router);
 
 app.set('view engine', 'hbs');

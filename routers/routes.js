@@ -1,5 +1,6 @@
 const express = require('express');
 const sgMail = require('@sendgrid/mail');
+const { check, validationResult } = require('express-validator');
 
 const router = new express.Router();
 
@@ -45,8 +46,21 @@ router.get('/contact', (req, res) => {
   });
 });
 
-router.post('/contact', (req, res) => {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+router.post('/contact', [
+  check('fromEmail').isEmail().normalizeEmail(),
+  check('firstName').trim().escape(),
+  check('lastName').trim().escape().notEmpty(),
+  check('phone').isMobilePhone('en-US'),
+  check('referralSource').trim().escape(),
+  check('inquiringFor').trim().escape(),
+  check('brochure').trim().escape(),
+  check('tour').trim().escape(),
+  check('comments').trim().escape(),
+], (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).send('Sorry, something appears to have gone wrong!');
+  }
   const toEmail = process.env.EMAIL_RECIPIENT;
   const { fromEmail, firstName, lastName, phone, referralSource, inquiringFor, brochure, tour, comments } = req.body;
   const msg = {
@@ -70,12 +84,9 @@ router.post('/contact', (req, res) => {
         <p>${comments}</p>
         `,
   };
-  try {
-    sgMail.send(msg);
-  } catch (e) {
-    return res.status(500).send('There was a problem sending your inquiry. Please contact us by phone at 925-461-8409');
-  }
-  return res.send('Thank you for your inquiry! Our Community Relations Director will be in touch with you soon to help answer your questions.');
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  sgMail.send(msg);
+  return res.send('Thank you for your inquiry! Our Community Relations Director will reach out to you shortly.');
 });
 
 module.exports = router;
