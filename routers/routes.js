@@ -40,6 +40,12 @@ router.get('/activities', (req, res) => {
   });
 });
 
+router.get('/covid-19', (req, res) => {
+  res.render('covid.hbs', {
+    title: 'COVID-19',
+  });
+});
+
 router.get('/contact', (req, res) => {
   res.render('contact.hbs', {
     title: 'Contact Us',
