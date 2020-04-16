@@ -2,6 +2,16 @@
 <html>
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163789633-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163789633-1');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{title}}</title>
@@ -29,23 +39,24 @@
                 <div class="col">
                   <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="first-name" name="firstName" required/>
+                    <input type="text" class="form-control" id="first-name" name="firstName" required />
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="last-name" name="lastName" required/>
+                    <input type="text" class="form-control" id="last-name" name="lastName" required />
                   </div>
                 </div>
               </div>
               <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="xxx-xxx-xxxx" required/>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="xxx-xxx-xxxx" required />
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required/>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com"
+                  required />
               </div>
               <div class="form-group">
                 <label for="referralSource">How did you hear about us?</label>
@@ -125,21 +136,23 @@
     </div>
     <div class="row mt-4">
       <div class="col">
-        <div class="jumbotron jumbotron-fluid d-flex align-items-center" style="background-image: url('img/employment.jpg');background-position:center;background-size:cover;height:600px;">
+        <div class="jumbotron jumbotron-fluid d-flex align-items-center"
+          style="background-image: url('img/employment.jpg');background-position:center;background-size:cover;height:600px;">
           <div class="container text-white p-4 text-center" style="background-color: rgba(0, 0, 0, 0.5);">
             <p class="display-2">Employment Opportunities</p>
             <p class="extra-height">Do you have what it takes? Come work with us at Carefield Pleasanton!</p>
-            <a target="_blank" href="https://carefield-pleasanton.oasisrecruit.com/"><button type="button" class="btn btn-lg btn-outline-light">See all employment opportunities</button></a>
+            <a target="_blank" href="https://carefield-pleasanton.oasisrecruit.com/"><button type="button"
+                class="btn btn-lg btn-outline-light">See all employment opportunities</button></a>
           </div>
         </div>
       </div>
     </div>
     {{> scripts}}
     <script type="text/javascript">
-      $('#contact-form').submit(function() {
+      $('#contact-form').submit(function () {
         event.preventDefault();
         $('#form-response').html(`<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>`);
-        var sanitize = function(input) {
+        var sanitize = function (input) {
           return input.replace(/<(|\/|[^>\/bi]|\/[^>bi]|[^\/>][^>]+|\/[^>][^>]+)>/g, '');
         }
 
@@ -187,4 +200,5 @@
     </script>
     {{> footer}}
 </body>
+
 </html>
