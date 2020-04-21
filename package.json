@@ -10,6 +10,7 @@
     "list": "pm2 list",
     "reload": "pm2 reload all",
     "restart": "pm2 restart all",
+    "update": "pm2 update",
     "stop": "pm2 stop all",
     "delete": "pm2 delete all",
     "monitor": "pm2 monit"
