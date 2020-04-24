@@ -6,60 +6,86 @@ const router = new express.Router();
 
 router.get('/', (req, res) => {
   res.render('index.hbs', {
-    title: 'Carefield Pleasanton',
+    title: 'Carefield Pleasanton Memory Care',
+    description: 'Carefield Pleasanton Memory Care is a memory care communty in Pleasanton, California. Carefield Pleasanton offers an engaging and varied lifestyle that empowers individuals to enjoy creative pursuits, refine skills, revisit old hobbies, and discover new passions in a family environment.',
+    jsonld: `{
+      "@context": "https://schema.org",
+      "@type": "localBusiness",
+      "image": "https://carefieldpleasanton.com/img/hero-slide-1.jpg",
+      "logo": "https://carefieldpleasanton.com/img/carefield-pleasanton-logo.png",
+      "address": {
+        "@type": "postalAddress",
+        "addressLocality": "Pleasanton",
+        "addressRegion": "CA",
+        "postalCode": "94566",
+        // eslint-disable-next-line comma-dangle
+        "streetAddress": "4115 Mohr Ave."
+      },
+      "name": "Carefield Pleasanton Memory Care",
+      "url": "https://carefieldpleasanton.com",
+      // eslint-disable-next-line comma-dangle
+      "telephone": "+19254618409",
+    // eslint-disable-next-line comma-dangle
+      "sameAs": ["https://www.facebook.com/carefieldpleasanton"]
+    }`,
   });
 });
 
 router.get('/about', (req, res) => {
   res.render('about.hbs', {
-    title: 'About Carefield Pleasanton',
+    title: 'About Carefield Pleasanton Memory CAre',
   });
 });
 
 router.get('/photos', (req, res) => {
   res.render('photos.hbs', {
-    title: 'Photo Gallery',
+    title: 'Photo Gallery - Carefield Pleasanton Memory Care',
   });
 });
 
-router.get('/videos', (req,res) => {
+router.get('/videos', (req, res) => {
   res.render('videos.hbs', {
-    title: 'Videos',
+    title: 'Videos - Carefield Pleasanton Memory Care',
   });
 });
 
 router.get('/floor-plans', (req, res) => {
   res.render('floor-plans.hbs', {
-    title: 'Floorplans',
+    title: 'Floorplans - Carefield Pleasanton Memory Care',
   });
 });
 
 router.get('/memory-care', (req, res) => {
   res.render('memory-care.hbs', {
-    title: 'Memory Care',
+    title: 'Carefield Pleasanton Memory Care',
   });
 });
 
 router.get('/activities', (req, res) => {
   res.render('activities.hbs', {
-    title: 'Events & Activities',
+    title: 'Events & Activities - Carefield Pleasanton Memory Care',
   });
 });
 
 router.get('/covid-19', (req, res) => {
   res.render('covid.hbs', {
-    title: 'COVID-19',
+    title: 'COVID-19 - Carefield Pleasanton Memory Care',
   });
 });
 
-router.get('/sitemap.xml', (req,res) => {
+router.get('/sitemap.xml', (req, res) => {
   const file = `${__dirname}/../public/sitemaps/sitemap.xml`;
   res.download(file);
 });
 
+router.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.send('User-agent: *\nAllow: /*\nSitemap: https://carefieldpleasanton.com/sitemap.xml');
+});
+
 router.get('/contact', (req, res) => {
   res.render('contact.hbs', {
-    title: 'Contact Us',
+    title: 'Contact Us - Carefield Pleasanton Memory Care',
   });
 });
 
