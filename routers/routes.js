@@ -18,14 +18,11 @@ router.get('/', (req, res) => {
         "addressLocality": "Pleasanton",
         "addressRegion": "CA",
         "postalCode": "94566",
-        // eslint-disable-next-line comma-dangle
         "streetAddress": "4115 Mohr Ave."
       },
       "name": "Carefield Pleasanton Memory Care",
       "url": "https://carefieldpleasanton.com",
-      // eslint-disable-next-line comma-dangle
       "telephone": "+19254618409",
-    // eslint-disable-next-line comma-dangle
       "sameAs": ["https://www.facebook.com/carefieldpleasanton"]
     }`,
   });
