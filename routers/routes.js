@@ -37,6 +37,20 @@ router.get('/about', (req, res) => {
 router.get('/photos', (req, res) => {
   res.render('photos.hbs', {
     title: 'Photo Gallery - Carefield Pleasanton Memory Care',
+    photos: [
+      { src: '/img/gallery/CarefieldLivingPleasanton-1.jpg' },
+      { src: '/img/gallery/CarefieldLivingPleasanton-2.jpg' },
+      { src: '/img/gallery/CarefieldLivingPleasanton-3.jpg' },
+      { src: '/img/gallery/CarefieldLivingPleasanton-4.jpg' },
+      { src: '/img/gallery/CarefieldLivingPleasanton-5.jpg' },
+      { src: '/img/gallery/CarefieldLivingPleasanton-6.jpg' },
+      { src: '/img/gallery/CarefieldLivingPleasanton-7.jpg' },
+      { src: '/img/gallery/CarefieldLivingPleasanton-8.jpg' },
+      { src: '/img/gallery/CarefieldLivingPleasanton-9.jpg' },
+      { src: '/img/gallery/CarefieldLivingPleasanton-10.jpg' },
+      { src: '/img/gallery/CarefieldLivingPleasanton-11.jpg' },
+      { src: '/img/gallery/CarefieldLivingPleasanton-12.jpg' },
+    ],
   });
 });
 
