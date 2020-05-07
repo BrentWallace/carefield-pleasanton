@@ -74,7 +74,7 @@ router.get('/photos/activities', (req, res) => {
         photos: [
           { src: '/img/activities/family/carol-and-daughter.jpg', alt: '' },
           { src: '/img/activities/family/firefighter.jpg', alt: '' },
-          { src: '/img/activities/family/peggy-with-daughter-and-granddaughter.jpg', alt: '' },
+          { src: '/img/activities/family/peggy-with-daughter-and-granddaughter.JPG', alt: '' },
           { src: '/img/activities/family/residents-enjoying-driveby.jpg', alt: '' },
         ],
       },
