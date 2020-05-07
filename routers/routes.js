@@ -41,6 +41,7 @@ router.get('/photos', (req, res) => {
       {
         title: '',
         target: 'community-gallery',
+        description: '',
         photos: [
           { src: '/img/gallery/CarefieldLivingPleasanton-1.jpg' },
           { src: '/img/gallery/CarefieldLivingPleasanton-2.jpg' },
@@ -54,6 +55,78 @@ router.get('/photos', (req, res) => {
           { src: '/img/gallery/CarefieldLivingPleasanton-10.jpg' },
           { src: '/img/gallery/CarefieldLivingPleasanton-11.jpg' },
           { src: '/img/gallery/CarefieldLivingPleasanton-12.jpg' },
+        ],
+      },
+    ],
+  });
+});
+
+router.get('/photos/activities', (req, res) => {
+  res.render('photos.hbs', {
+    title: 'Activities Photos',
+    target: 'activities-photos',
+    description: '',
+    albums: [
+      {
+        title: 'Residents with their Families - May 2020',
+        target: 'residents-families',
+        description: 'We are helping families connect with their loved ones during these challenging times.',
+        photos: [
+          { src: '/img/activities/family/carol-and-daughter.jpg', alt: '' },
+          { src: '/img/activities/family/firefighter.jpg', alt: '' },
+          { src: '/img/activities/family/peggy-with-daughter-and-granddaughter.jpg', alt: '' },
+          { src: '/img/activities/family/residents-enjoying-driveby.jpg', alt: '' },
+        ],
+      },
+      {
+        title: 'Grand Opening - December 2020',
+        target: 'grand-opening',
+        description: '',
+        photos: [
+          { src: '/img/activities/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_05.jpg', alt: '' },
+          { src: '/img/activities/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_08.jpg', alt: '' },
+          { src: '/img/activities/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_04.jpg', alt: '' },
+          { src: '/img/activities/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_55.jpg', alt: '' },
+          { src: '/img/activities/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_44.jpg', alt: '' },
+          { src: '/img/activities/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_41.jpg', alt: '' },
+          { src: '/img/activities/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_29.jpg', alt: '' },
+          { src: '/img/activities/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_25.jpg', alt: '' },
+          { src: '/img/activities/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_26.jpg', alt: '' },
+          { src: '/img/activities/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_19.jpg', alt: '' },
+        ],
+      },
+    ],
+  });
+});
+
+router.get('/photos/dining', (req, res) => {
+  res.render('photos.hbs', {
+    title: 'Dining Photos',
+    target: 'dining-photos',
+    description: '',
+    albums: [
+      {
+        title: 'Restaurant Style Dining - May 2020',
+        target: 'restaurant-style',
+        description: '',
+        photos: [
+          { src: '/img/dining/restaurant-style/carefield-appetizers.jpg', alt: '' },
+          { src: '/img/dining/restaurant-style/carefield-dessert.jpg', alt: '' },
+          { src: '/img/dining/restaurant-style/carefield-soup.jpg', alt: '' },
+          { src: '/img/dining/restaurant-style/carefield-salad.jpg', alt: '' },
+          { src: '/img/dining/restaurant-style/carefield-entree.jpg', alt: '' },
+          { src: '/img/dining/restaurant-style/carefield-special-dessert.jpg', alt: '' },
+        ],
+      },
+      {
+        title: 'Carefield Pleasanton Grand Opening - December 2019',
+        target: 'grand-opening',
+        description: '',
+        photos: [
+          { src: '/img/dining/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_06.jpg', alt: '' },
+          { src: '/img/dining/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_07.jpg', alt: '' },
+          { src: '/img/dining/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_12.jpg', alt: '' },
+          { src: '/img/dining/grand-opening/MovingPerceptions-CarefieldLivingPleasantonRC-20191206_16.jpg', alt: '' },
         ],
       },
     ],
@@ -87,6 +160,12 @@ router.get('/activities', (req, res) => {
 router.get('/covid-19', (req, res) => {
   res.render('covid.hbs', {
     title: 'COVID-19 - Carefield Pleasanton Memory Care',
+  });
+});
+
+router.get('/testimonials', (req, res) => {
+  res.render('testimonials.hbs', {
+    title: 'Family Testimonials',
   });
 });
 
