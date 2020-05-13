@@ -103,7 +103,7 @@ router.get('/photos/dining', (req, res) => {
   res.render('photos.hbs', {
     title: 'Dining Photos',
     target: 'dining-photos',
-    description: '',
+    description: 'Our culinary team at Carefield Pleasanton Memory Care is committed to providing a nurturing and satisfying dining experience for our residents. Always having our residents well-being and care in mind, our meals are prepared with fresh and flavorful ingredients with dining options and choices.',
     albums: [
       {
         title: 'Restaurant Style Dining - May 2020',
