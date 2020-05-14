@@ -63,7 +63,7 @@ router.get('/photos', (req, res) => {
 
 router.get('/photos/activities', (req, res) => {
   res.render('photos.hbs', {
-    title: 'Activities Photos',
+    title: 'Activities Photo Gallery',
     target: 'activities-photos',
     description: '',
     albums: [
@@ -76,6 +76,7 @@ router.get('/photos/activities', (req, res) => {
           { src: '/img/activities/family/firefighter.jpg', alt: '' },
           { src: '/img/activities/family/peggy-with-daughter-and-granddaughter.JPG', alt: '' },
           { src: '/img/activities/family/residents-enjoying-driveby.jpg', alt: '' },
+          { src: '/img/activities/family/CPDancing.jpg', alt: '' },
         ],
       },
       {
@@ -101,7 +102,7 @@ router.get('/photos/activities', (req, res) => {
 
 router.get('/photos/dining', (req, res) => {
   res.render('photos.hbs', {
-    title: 'Dining Photos',
+    title: 'Dining Photo Gallery',
     target: 'dining-photos',
     description: 'Our culinary team at Carefield Pleasanton Memory Care is committed to providing a nurturing and satisfying dining experience for our residents. Always having our residents well-being and care in mind, our meals are prepared with fresh and flavorful ingredients with dining options and choices.',
     albums: [
