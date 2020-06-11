@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
 
 router.get('/about', (req, res) => {
   res.render('about.hbs', {
-    title: 'About Carefield Pleasanton Memory CAre',
+    title: 'About Carefield Pleasanton Memory Care',
   });
 });
 
@@ -68,7 +68,7 @@ router.get('/photos/activities', (req, res) => {
     description: '',
     albums: [
       {
-        title: 'Residents with their Families - May 2020',
+        title: 'Residents with their Families',
         target: 'residents-families',
         description: 'We are helping families connect with their loved ones during these challenging times.',
         photos: [
